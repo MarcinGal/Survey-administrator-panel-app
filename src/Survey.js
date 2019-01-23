@@ -7,7 +7,8 @@ class Survey extends React.Component {
         ||
         {
             questions: [],
-            newQuestionText: ''
+            newQuestionText: '',
+            questionTypeValue: "closed"
         }
 
     componentDidUpdate() {
@@ -19,19 +20,24 @@ class Survey extends React.Component {
         JSON.stringify(this.state)
     )
 
-    createQuestion = text => ({
+    createQuestion = (text, type) => ({
+        key: Date.now(),
         questionText: text,
-        key: Date.now()
+        questionType: type
     })
 
     addQuestion = () => this.setState({
         questions: this.state.questions.concat(
             this.createQuestion(
-                this.state.newQuestionText
+                this.state.newQuestionText,
+                this.state.questionTypeValue
             )
         ),
         newQuestionText: ''
     })
+
+    onNewQuestionTypeChangeHandler = (event, index, value) => this.setState({
+        questionTypeValue: value });
 
     onNewQuestionTextChangeHandler = event => this.setState({ newQuestionText: event.target.value })
 
@@ -40,11 +46,14 @@ class Survey extends React.Component {
     render() {
         return (
             <div>
-                Survey is here
                 <AddQuestion
                     newQuestionText={this.state.newQuestionText}
                     onNewQuestionTextChangeHandler={this.onNewQuestionTextChangeHandler}
                     addQuestion={this.addQuestion}
+                    onNewQuestionTypeChangeHandler={this.onNewQuestionTypeChangeHandler}
+                    questionTypeValue={this.state.questionTypeValue}
+                    questionTypeClosed="Pytanie zamknięte"
+                    questionTypeOpened="Pytanie otwarte"
                 >
                 </AddQuestion>
                 <QuestionsList
