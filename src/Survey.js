@@ -59,6 +59,8 @@ class Survey extends React.Component {
                 <QuestionsList
                     questionsList={this.state.questions}
                     questionText={this.questionText}
+                    questionTypeValue={this.state.questionTypeValue}
+                    questions={this.state.questions}
                 >
                 </QuestionsList>
             </div>
