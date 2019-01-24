@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { ListItem } from 'material-ui/List'
 import DeleteIcon from 'material-ui/svg-icons/action/delete'
 import IconButton from 'material-ui/IconButton'

@@ -1,5 +1,5 @@
-import React from 'react';
-import TextField from 'material-ui/TextField';
+import React from 'react'
+import TextField from 'material-ui/TextField'
 
 const style = {
     textField: {
@@ -8,7 +8,7 @@ const style = {
     }
 }
 
-const OpenedAnswer = (props) => (
+const OpenedAnswer = () => (
     <TextField
         hintText="Wpisz swoją odpowiedź"
         multiLine={true}

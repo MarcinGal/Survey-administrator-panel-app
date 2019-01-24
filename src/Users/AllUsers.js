@@ -5,9 +5,9 @@ import Paper from 'material-ui/Paper'
 
 const style = {
     paper: {
-      margin: "20px 2vw",
+        margin: "20px 2vw",
     }
-  }
+}
 
 class AllUsers extends React.Component {
     state = JSON.parse(localStorage.getItem('UsersState'))
@@ -40,7 +40,7 @@ class AllUsers extends React.Component {
         newUserName: ''
     })
 
-    onNewUserNameChangeHandler = event => this.setState({ newUserName: event.target.value })
+    onNewUserNameChangeHandler = name => this.setState({ newUserName: name.target.value })
 
     deleteUser = userKey => this.setState({
         users: this.state.users.filter(
@@ -51,7 +51,7 @@ class AllUsers extends React.Component {
     render() {
         return (
             <Paper
-            style={style.paper}
+                style={style.paper}
             >
                 <AddUser
                     newUserName={this.state.newUserName}

@@ -1,5 +1,5 @@
-import React from 'react';
-import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
+import React from 'react'
+import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
 
 const style = {
     radioButton: {
@@ -8,7 +8,7 @@ const style = {
     }
 }
 
-const ClosedAnswer = (props) => (
+const ClosedAnswer = () => (
     <RadioButtonGroup name="closedQuestionAnswer" defaultSelected="Yes">
         <RadioButton
             value="Yes"
