@@ -1,25 +1,55 @@
 import React from 'react'
 import Question from './Question'
-import Answer from './Answer'
+import ClosedAnswer from './ClosedAnswer'
+import OpenedAnswer from './OpenedAnswer'
+import Paper from 'material-ui/Paper';
 
 const QuestionsList = (props) => (
-    <div>
+    <Paper>
         {
             props.questionsList &&
             props.questionsList.map &&
             props.questionsList.map(
-                question => (
-                    <Question
-                        question={question}
-                    >
-                        <Answer>
-                        </Answer>
-                    </Question>
-
-                )
+                question => {
+                    switch (props.actualQuestionTypeValue) {
+                        case "closed":
+                            return (
+                                <Paper
+                                    question={question}
+                                >
+                                    <Question
+                                        question={question}
+                                        questionsList={props.questionsList}
+                                    />
+                                    <ClosedAnswer
+                                    />
+                                </Paper>
+                            )
+                        case "opened":
+                            return (
+                                <Paper>
+                                    <Question
+                                        question={question}
+                                        questionsList={props.questionsList}
+                                    />
+                                    <OpenedAnswer />
+                                </Paper>
+                            )
+                        default:
+                            return (
+                                <Paper>
+                                    <Question
+                                        question={question}
+                                        questionsList={props.questionsList}
+                                    />
+                                    <OpenedAnswer />
+                                </Paper>
+                            )
+                    }
+                }
             )
         }
-    </div>
+    </Paper>
 )
 
 export default QuestionsList
