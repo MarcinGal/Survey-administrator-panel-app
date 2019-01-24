@@ -5,7 +5,7 @@ import Paper from 'material-ui/Paper'
 
 const style = {
     paper: {
-      marginTop: '40px'
+      margin: "20px 2vw",
     }
   }
 

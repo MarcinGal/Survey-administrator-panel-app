@@ -6,6 +6,10 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 
 const style = {
+    headline: {
+        padding: "5px 12px 0",
+        fontSize: "15px"
+    },
     questionTypeMenuStyle: {
         width: "80vw",
         textAlign: "center",
@@ -24,6 +28,11 @@ const style = {
 
 const AddQuestion = (props) => (
     <div>
+        <div
+            style={style.headline}
+        >
+            <h2>Lista pytań</h2>
+        </div>
         <Paper>
             <SelectField
                 value={props.questionTypeValue}

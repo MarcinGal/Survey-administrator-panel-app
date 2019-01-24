@@ -3,7 +3,11 @@ import Paper from 'material-ui/Paper';
 
 const style = {
   paper: {
-    marginTop: '40px'
+    margin: '1px 0',
+    padding: '1px 0'
+  },
+  question: {
+    margin: '12px'
   }
 }
 
@@ -11,7 +15,9 @@ const Question = (props) => (
   <Paper
     style={style.paper}
   >
-    <p>{props.question.questionText}</p>
+    <p
+    style={style.question}
+    >{props.question.questionText}</p>
   </Paper>
 )
 

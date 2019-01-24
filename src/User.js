@@ -3,8 +3,11 @@ import Paper from 'material-ui/Paper';
 
 const style = {
   paper: {
-    marginTop: '5px',
-    padding: '2px'
+    margin: '1px 0',
+    padding: '1px 0'
+  },
+  usersNames: {
+    margin: '12px'
   }
 }
 
@@ -12,7 +15,9 @@ const User = (props) => (
   <Paper
     style={style.paper}
   >
-    <p>{props.user.userName}</p>
+    <p
+    style={style.usersNames}
+    >{props.user.userName}</p>
   </Paper>
 )
 

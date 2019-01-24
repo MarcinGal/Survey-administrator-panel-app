@@ -3,6 +3,12 @@ import AddQuestion from './AddQuestion'
 import QuestionsList from './QuestionsList'
 import Paper from 'material-ui/Paper'
 
+const style = {
+    paper: {
+      margin: "20px 2vw",
+    }
+  }
+
 class Survey extends React.Component {
     state = JSON.parse(localStorage.getItem('singleSurveyState'))
         ||
@@ -47,7 +53,9 @@ class Survey extends React.Component {
 
     render() {
         return (
-            <Paper>
+            <Paper
+            style={style.paper}
+            >
                 <AddQuestion
                     newQuestionText={this.state.newQuestionText}
                     onNewQuestionTextChangeHandler={this.onNewQuestionTextChangeHandler}

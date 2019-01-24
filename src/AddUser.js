@@ -4,8 +4,13 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 
 const style = {
+    headline: {
+       padding: "5px 12px 0",
+        fontSize: "15px"
+    },
+
     newUserNameStyle: {
-        width: "90vw",
+        width: "80vw",
         marginLeft: "12px"
     },
     button: {
@@ -16,12 +21,16 @@ const style = {
 
 
 const AddUser = (props) => (
-    <div>
         <Paper>
+            <div
+                style={style.headline}
+            >
+                <h2>Lista użytkowników</h2>
+            </div>
             <TextField
                 value={props.newUserName}
                 onChange={props.onNewUserNameChangeHandler}
-                hintText="Wpisz nazwę użytkownika"
+                hintText="Wpisz nazwę nowego użytkownika"
                 style={style.newUserNameStyle}
             />
             <RaisedButton
@@ -31,7 +40,6 @@ const AddUser = (props) => (
             >Dodaj Użytkownika
             </RaisedButton>
         </Paper>
-    </div>
 )
 
 export default AddUser
