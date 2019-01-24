@@ -51,6 +51,12 @@ class Survey extends React.Component {
 
     questionsList = () => this.state.filter(question => question.questionText)
 
+    deleteQuestion = questionKey => this.setState({
+        questions: this.state.questions.filter(
+            question => question.key !== questionKey
+        )
+    })
+
     render() {
         return (
             <Paper
@@ -71,6 +77,7 @@ class Survey extends React.Component {
                     questionText={this.questionText}
                     actualQuestionTypeValue={this.state.questionTypeValue}
                     newQuestionText={this.state.newQuestionText}
+                    deleteQuestion={this.deleteQuestion}
                 >
                 </QuestionsList>
             </Paper>

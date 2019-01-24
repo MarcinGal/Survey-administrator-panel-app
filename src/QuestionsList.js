@@ -20,6 +20,7 @@ const QuestionsList = (props) => (
                                     <Question
                                         question={question}
                                         questionsList={props.questionsList}
+                                        deleteQuestion={props.deleteQuestion}
                                     />
                                     <ClosedAnswer
                                     />
@@ -31,6 +32,7 @@ const QuestionsList = (props) => (
                                     <Question
                                         question={question}
                                         questionsList={props.questionsList}
+                                        deleteQuestion={props.deleteQuestion}
                                     />
                                     <OpenedAnswer />
                                 </Paper>
@@ -41,6 +43,7 @@ const QuestionsList = (props) => (
                                     <Question
                                         question={question}
                                         questionsList={props.questionsList}
+                                        deleteQuestion={props.deleteQuestion}
                                     />
                                     <OpenedAnswer />
                                 </Paper>

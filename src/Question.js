@@ -1,5 +1,7 @@
 import React from 'react';
-import Paper from 'material-ui/Paper';
+import { ListItem } from 'material-ui/List'
+import DeleteIcon from 'material-ui/svg-icons/action/delete'
+import IconButton from 'material-ui/IconButton'
 
 const style = {
   paper: {
@@ -12,13 +14,18 @@ const style = {
 }
 
 const Question = (props) => (
-  <Paper
+  <ListItem
     style={style.paper}
+    primaryText={props.question.questionText}
+    rightIconButton={
+      <IconButton>
+        <DeleteIcon
+          onClick={() => props.deleteQuestion(props.question.key)}
+        />
+      </IconButton>
+    }
   >
-    <p
-    style={style.question}
-    >{props.question.questionText}</p>
-  </Paper>
+  </ListItem>
 )
 
 export default Question

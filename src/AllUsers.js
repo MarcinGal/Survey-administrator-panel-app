@@ -42,6 +42,12 @@ class AllUsers extends React.Component {
 
     onNewUserNameChangeHandler = event => this.setState({ newUserName: event.target.value })
 
+    deleteUser = userKey => this.setState({
+        users: this.state.users.filter(
+            user => user.key !== userKey
+        )
+    })
+
     render() {
         return (
             <Paper
@@ -57,6 +63,7 @@ class AllUsers extends React.Component {
                     usersList={this.state.users}
                     userName={this.userName}
                     newUserName={this.state.newUserName}
+                    deleteUser={this.deleteUser}
                 >
                 </UsersList>
             </Paper>

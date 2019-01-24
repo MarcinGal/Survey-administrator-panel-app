@@ -34,6 +34,12 @@ const AddQuestion = (props) => (
             <h2>Lista pytań</h2>
         </div>
         <Paper>
+            <TextField
+                value={props.newQuestionText}
+                onChange={props.onNewQuestionTextChangeHandler}
+                hintText="Wpisz nazwę pytania"
+                style={style.questionTextStyle}
+            />
             <SelectField
                 value={props.questionTypeValue}
                 onChange={props.onNewQuestionTypeChangeHandler}
@@ -42,12 +48,6 @@ const AddQuestion = (props) => (
                 <MenuItem value="closed" primaryText={props.questionTypeClosed}></MenuItem>
                 <MenuItem value="opened" primaryText={props.questionTypeOpened}></MenuItem>
             </SelectField>
-            <TextField
-                value={props.newQuestionText}
-                onChange={props.onNewQuestionTextChangeHandler}
-                hintText="Wpisz nazwę pytania"
-                style={style.questionTextStyle}
-            />
             <RaisedButton
                 onClick={props.addQuestion}
                 onChange={props.onNewQuestionTextChangeHandler}

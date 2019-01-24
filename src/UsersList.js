@@ -11,6 +11,7 @@ const UsersList = (props) => (
                 user => (
                     <User
                         user={user}
+                        deleteUser={props.deleteUser}
                     />
                 )
             )
