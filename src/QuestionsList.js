@@ -11,7 +11,7 @@ const QuestionsList = (props) => (
             props.questionsList.map &&
             props.questionsList.map(
                 question => {
-                    switch (props.actualQuestionTypeValue) {
+                    switch (question.questionType) {
                         case "closed":
                             return (
                                 <Paper
