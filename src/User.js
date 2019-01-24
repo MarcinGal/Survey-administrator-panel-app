@@ -8,19 +8,19 @@ const style = {
     margin: '1px 0',
     padding: '1px 0'
   },
-  question: {
+  usersNames: {
     margin: '12px'
   }
 }
 
-const Question = (props) => (
-  <ListItem
+const User = (props) => (
+    <ListItem
     style={style.paper}
-    primaryText={props.question.questionText}
+    primaryText={props.user.userName}
     rightIconButton={
       <IconButton>
         <DeleteIcon
-          onClick={() => props.deleteQuestion(props.question.key)}
+          onClick={() => props.deleteUser(props.user.key)}
         />
       </IconButton>
     }
@@ -28,4 +28,4 @@ const Question = (props) => (
   </ListItem>
 )
 
-export default Question
+export default User

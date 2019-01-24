@@ -1,14 +1,30 @@
-import React from 'react';
+import React from 'react'
 import AddQuestion from './AddQuestion'
 import QuestionsList from './QuestionsList'
+import Paper from 'material-ui/Paper'
+import TextField from 'material-ui/TextField'
+
+const style = {
+    paper: {
+        margin: "20px 2vw",
+    },
+    newSurveyNameStyle: {
+        margin: "20px 12px 0",
+        fontSize: "5vh",
+        textAlign: "center",
+        width:"80vw",
+        lineHeight:"140%"
+    }
+}
 
 class Survey extends React.Component {
     state = JSON.parse(localStorage.getItem('singleSurveyState'))
         ||
         {
             questions: [],
-            newQuestionText: '',
-            questionTypeValue: "closed"
+            newQuestionText: "",
+            questionTypeValue: "closed",
+            surveyName: ""
         }
 
     componentDidUpdate() {
@@ -42,11 +58,28 @@ class Survey extends React.Component {
 
     onNewQuestionTextChangeHandler = event => this.setState({ newQuestionText: event.target.value })
 
+    onNewSurveyNameChangeHandler = surveyName => this.setState({ surveyName: surveyName.target.value})
+
     questionsList = () => this.state.filter(question => question.questionText)
+
+    deleteQuestion = questionKey => this.setState({
+        questions: this.state.questions.filter(
+            question => question.key !== questionKey
+        )
+    })
 
     render() {
         return (
-            <div>
+            <Paper
+                style={style.paper}
+            >
+                <TextField
+                    hintText="Wpisz nazwę ankiety"
+                    onChange={this.onNewSurveyNameChangeHandler}
+                    style={style.newSurveyNameStyle}
+                    multiLine={true}
+                    value={this.state.surveyName}
+                />
                 <AddQuestion
                     newQuestionText={this.state.newQuestionText}
                     onNewQuestionTextChangeHandler={this.onNewQuestionTextChangeHandler}
@@ -62,9 +95,10 @@ class Survey extends React.Component {
                     questionText={this.questionText}
                     actualQuestionTypeValue={this.state.questionTypeValue}
                     newQuestionText={this.state.newQuestionText}
+                    deleteQuestion={this.deleteQuestion}
                 >
                 </QuestionsList>
-            </div>
+            </Paper>
         )
     }
 }
