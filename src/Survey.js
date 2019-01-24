@@ -1,6 +1,7 @@
-import React from 'react';
+import React from 'react'
 import AddQuestion from './AddQuestion'
 import QuestionsList from './QuestionsList'
+import Paper from 'material-ui/Paper'
 
 class Survey extends React.Component {
     state = JSON.parse(localStorage.getItem('singleSurveyState'))
@@ -46,7 +47,7 @@ class Survey extends React.Component {
 
     render() {
         return (
-            <div>
+            <Paper>
                 <AddQuestion
                     newQuestionText={this.state.newQuestionText}
                     onNewQuestionTextChangeHandler={this.onNewQuestionTextChangeHandler}
@@ -64,7 +65,7 @@ class Survey extends React.Component {
                     newQuestionText={this.state.newQuestionText}
                 >
                 </QuestionsList>
-            </div>
+            </Paper>
         )
     }
 }
