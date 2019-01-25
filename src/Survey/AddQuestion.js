@@ -1,9 +1,9 @@
 import React from 'react'
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
-import Paper from 'material-ui/Paper';
+import SelectField from 'material-ui/SelectField'
+import MenuItem from 'material-ui/MenuItem'
+import TextField from 'material-ui/TextField'
+import RaisedButton from 'material-ui/RaisedButton'
+import Paper from 'material-ui/Paper'
 
 const style = {
     headline: {
@@ -24,7 +24,6 @@ const style = {
         padding: "5px"
     }
 }
-
 
 const AddQuestion = (props) => (
     <div>

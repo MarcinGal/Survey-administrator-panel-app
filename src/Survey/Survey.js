@@ -12,8 +12,8 @@ const style = {
         margin: "20px 12px 0",
         fontSize: "5vh",
         textAlign: "center",
-        width:"80vw",
-        lineHeight:"140%"
+        width: "80vw",
+        lineHeight: "140%"
     }
 }
 
@@ -58,7 +58,7 @@ class Survey extends React.Component {
 
     onNewQuestionTextChangeHandler = event => this.setState({ newQuestionText: event.target.value })
 
-    onNewSurveyNameChangeHandler = surveyName => this.setState({ surveyName: surveyName.target.value})
+    onNewSurveyNameChangeHandler = surveyName => this.setState({ surveyName: surveyName.target.value })
 
     questionsList = () => this.state.filter(question => question.questionText)
 

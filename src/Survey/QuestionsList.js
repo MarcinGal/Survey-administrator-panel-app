@@ -2,7 +2,7 @@ import React from 'react'
 import Question from './Question'
 import ClosedAnswer from './ClosedAnswer'
 import OpenedAnswer from './OpenedAnswer'
-import Paper from 'material-ui/Paper';
+import Paper from 'material-ui/Paper'
 
 const QuestionsList = (props) => (
     <Paper>
